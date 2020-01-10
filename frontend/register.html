@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Регистрация на зала</title>
+  </head>
+  <body>
+    <div id="container">
+      <form>
+        Сграда: <select id="building-select"></select>
+        Номер: <input type="text">
+        <input type="button" value="Добави" onclick="registerRoom()">
+      </form>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/buildings_data.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
