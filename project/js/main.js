@@ -1,5 +1,6 @@
 var select = document.getElementById("building-select");
 var keys = Object.keys(buildings);
+
 for(let i = 0; i < keys.length; i++) {
     select.options[select.options.length] = new Option(keys[i]);
 }
