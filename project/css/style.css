@@ -7,12 +7,16 @@
 
 input[type=text], select {
     width: 100%;
-    padding: 5px 20px;
+    padding: 5px;
     margin: 8px 0;
     display: block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+}
+
+select {
+    padding-left: 1px;
 }
 
 input[type=submit] {
@@ -30,9 +34,7 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
-select {
-    padding: 5px 3px;
-}
+
 
 @media screen and (max-width: 600px) {
     #container {
