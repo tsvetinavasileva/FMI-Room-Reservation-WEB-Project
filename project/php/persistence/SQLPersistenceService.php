@@ -27,7 +27,7 @@ class SQLPersistenceService implements PersistenceService
 
     public function getBuildings() {
         $buildings = [];
-        $sql = "SELECT * FROM " . self::BUILDING_TABLE;
+        $sql = "SELECT name FROM " . self::BUILDING_TABLE;
         $stmt = $this->conn->query($sql);
         while ($building = $stmt->fetch(PDO::FETCH_OBJ)) {
             $buildings[] = $building;
