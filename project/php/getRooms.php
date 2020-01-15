@@ -1,7 +1,8 @@
 <?php
 require_once "persistence/SQLPersistenceService.php";
+require_once "util/DbConnectionCreator.php";
 
-$conn = new PDO('mysql:host=localhost:3306;dbname=project', 'root', '');
+$conn = DbConnectionCreator::createConnection();
 $persistenceService = new SQLPersistenceService($conn);
 $rooms = $persistenceService->getRooms();
 echo json_encode($rooms);
