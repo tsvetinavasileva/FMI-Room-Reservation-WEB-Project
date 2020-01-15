@@ -3,7 +3,8 @@ require_once "PersistenceService.php";
 
 class SQLPersistenceService implements PersistenceService
 {
-    const ROOM_DB_NAME = "room";
+    const ROOM_TABLE = "room";
+    const BUILDING_TABLE = "building";
     private $conn;
 
     function __construct($conn)
@@ -14,7 +15,7 @@ class SQLPersistenceService implements PersistenceService
     public function getRooms()
     {
         $rooms = [];
-        $sql = "SELECT * FROM " . self::ROOM_DB_NAME;
+        $sql = "SELECT * FROM " . self::ROOM_TABLE;
         $stmt = $this->conn->query($sql);
         //Here we need to add some logic, so we can retrieve the resources for each room
         while ($room = $stmt->fetch(PDO::FETCH_OBJ)) {
@@ -22,5 +23,16 @@ class SQLPersistenceService implements PersistenceService
         }
 
         return $rooms;
+    }
+
+    public function getBuildings() {
+        $buildings = [];
+        $sql = "SELECT * FROM " . self::BUILDING_TABLE;
+        $stmt = $this->conn->query($sql);
+        while ($building = $stmt->fetch(PDO::FETCH_OBJ)) {
+            $buildings[] = $building;
+        }
+
+        return $buildings;
     }
 }

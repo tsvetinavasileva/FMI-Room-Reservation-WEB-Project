@@ -1,15 +1,21 @@
 var select = document.getElementById("building-select");
-var keys = Object.keys(buildings);
 
-for(let i = 0; i < keys.length; i++) {
-    select.options[select.options.length] = new Option(keys[i]);
-}
+$.ajax({
+    url: "../project/php/getBuildings.php",
+    context: document.body,
+    success: function(response) {
+        const buildings = JSON.parse(response);
+        const buildingNames = buildings.map(function (b) {
+            return b.name;
+        });
+
+        for (var i = 0; i < buildingNames.length; i++) {
+            select.options[select.options.length] = new Option(buildingNames[i]);
+        }
+    }
+});
 
 function registerRoom() {
-    var buildingName = select.options[select.selectedIndex].value;
-    var buildingCoordinates = buildings[buildingName];
+    const buildingName = select.options[select.selectedIndex].value;
     console.log(buildingName);
-    console.log(buildingCoordinates);
 }
-
-
