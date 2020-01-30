@@ -10,6 +10,18 @@ $.ajax({
     }
 });
 
+$("#resources-select").mousedown(function(e){
+    e.preventDefault();
+
+    var select = this;
+    var scroll = select.scrollTop;
+
+    e.target.selected = !e.target.selected;
+
+    setTimeout(() => select.scrollTop = scroll, 0);
+    $(select).focus();
+}).mousemove(e => e.preventDefault());
+
 $.ajax({
     url: "../../project/php/getResources.php",
     context: document.body,
