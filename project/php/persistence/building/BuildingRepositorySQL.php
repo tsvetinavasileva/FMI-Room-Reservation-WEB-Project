@@ -13,6 +13,6 @@ class BuildingRepositorySQL implements BuildingRepository
 
     function getBuildingsNames()
     {
-        return $this->conn->query('SELECT name FROM building')->fetchAll(PDO::FETCH_COLUMN);
+        return $this->conn->query('SELECT buildingName FROM building')->fetchAll(PDO::FETCH_COLUMN);
     }
 }
