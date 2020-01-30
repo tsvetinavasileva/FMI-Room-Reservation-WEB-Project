@@ -34,10 +34,18 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
-
-
 @media screen and (max-width: 600px) {
     #container {
         width: 80%;
     }
+}
+
+#resources-select {
+    white-space: normal;
+    overflow-y: auto;
+}
+
+#resources-select option {
+    font-family: 'FontAwesome', sans-serif;
+    font-size: 16px;
 }
