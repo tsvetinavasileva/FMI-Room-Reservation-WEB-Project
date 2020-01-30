@@ -10,7 +10,7 @@ $.ajax({
     }
 });
 
-$("#resources-select").mousedown(function(e){
+$("#features-select").mousedown(function(e){
     e.preventDefault();
 
     var select = this;
@@ -23,16 +23,16 @@ $("#resources-select").mousedown(function(e){
 }).mousemove(e => e.preventDefault());
 
 $.ajax({
-    url: "../../project/php/getResources.php",
+    url: "../../project/php/getFeatures.php",
     context: document.body,
     success: function(response) {
-        var select = document.getElementById("resources-select");
-        let resources = JSON.parse(response);
-        select.setAttribute("size", resources.length)
-        for (let i = 0; i < resources.length; i++) {
-            const option = new Option();
-            option.innerHTML = resources[i]["iconCode"] + " " + resources[i]["resourceName"];
-            option.setAttribute("value", resources[i]["resourceName"]);
+        var select = document.getElementById("features-select");
+        let features = JSON.parse(response);
+        select.setAttribute("size", features.length)
+        for (let i = 0; i < features.length; i++) {
+            var option = new Option();
+            option.innerHTML = features[i]["iconCode"] + " " + features[i]["featureName"];
+            option.setAttribute("value", features[i]["featureName"]);
             select.options[select.options.length] = option;
         }
     }

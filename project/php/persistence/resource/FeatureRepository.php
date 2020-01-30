@@ -1,7 +1,7 @@
 <?php
 
 
-interface ResourceRepository
+interface FeatureRepository
 {
     function getResources();
 }
