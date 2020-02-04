@@ -11,5 +11,5 @@
  - Run C:\xampp\xampp-control.exe and start Apache and MySQL
  - Open Command Prompt and execute:
      - cd C:\xampp\mysql\bin
-     - mysql -u root <C:\xampp\htdocs\sql\project.sql
+     - mysql -u root <C:\xampp\htdocs\sql\project.sql (make sure you use the mysql executable from xampp, if you have another mysql installed)
  - Navigate to some html page(e.g http://localhost/project/register.html)
