@@ -8,8 +8,8 @@
  - Download and install the latest version of xampp from [here](https://www.apachefriends.org/download.html)
  - Go to C:\xampp\htdocs, right click, Git Bash Here and execute:
      - git clone https://github.com/gdgenchev/FMI-Room-Reservation-WEB-Project.git
+ - Run C:\xampp\xampp-control.exe and start Apache and MySQL
  - Open Command Prompt and execute:
      - cd C:\xampp\mysql\bin
      - mysql -u root <C:\xampp\htdocs\sql\project.sql
- - Run C:\xampp\xampp-control.exe and start Apache and MySQL
  - Navigate to some html page(e.g http://localhost/project/register.html)
