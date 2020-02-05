@@ -1,7 +1,7 @@
 const ROOT_DIR = "FMI-Room-Reservation-WEB-Project/project";
 
 $.ajax({
-    url: "php/getBuildings.php",
+    url: "http://localhost/" + ROOT_DIR + "/php/getBuildings.php",
     context: document.body,
     success: function(response) {
         var select = document.getElementById("building-select");
@@ -25,7 +25,7 @@ $("#features-select").mousedown(function(e){
 }).mousemove(e => e.preventDefault());
 
 $.ajax({
-    url: "php/getFeatures.php",
+    url: "http://localhost/" + ROOT_DIR + "/php/getFeatures.php",
     context: document.body,
     success: function(response) {
         var select = document.getElementById("features-select");
