@@ -28,7 +28,8 @@ roomNumber VARCHAR(10),
 buildingName VARCHAR(100),
 reservedFrom DATETIME,
 reservedTo DATETIME,
-personWhoReserved VARCHAR(50)
+personWhoReserved VARCHAR(50),
+subject VARCHAR(100)
 );
 
 CREATE TABLE roomfeature(
@@ -67,5 +68,12 @@ INSERT INTO feature
     
 INSERT INTO feature 
 	VALUES('Компютър', '&#xf108;');    
-    
 
+INSERT INTO room
+    VALUES('Семинарна зала', '210', 'ФХФ', 200);
+
+INSERT INTO room
+    VALUES('Семинарна зала', '325', 'ФМИ', 100);
+
+INSERT INTO reservation
+	VALUES('200','ФМИ','2020-01-01 10:10:10','2020-01-01 11:10:10','Milen Petrov','Web');
