@@ -5,7 +5,7 @@ function getAvailableRooms() {
     const startDateTime = document.getElementById('startDateTime').value;
     const endDateTime = document.getElementById('endDateTime').value;
     const reservedBy = document.getElementById('reservedBy').value;
-
+    const subject = document.getElementById('subject').value;
     $.ajax({
         url: "php/getAvailableRooms.php",
         context: document.body,
@@ -13,7 +13,8 @@ function getAvailableRooms() {
         data: {
             startDateTime: startDateTime,
             endDateTime: endDateTime,
-            reservedBy: reservedBy
+            reservedBy: reservedBy,
+            subject: subject
         },
         success: function (response) {
             const availableRoomsDiv = document.getElementById('available-rooms-div');
