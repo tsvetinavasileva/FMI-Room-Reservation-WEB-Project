@@ -16,7 +16,7 @@ roomNumber VARCHAR(10),
 buildingName VARCHAR(100),
 type VARCHAR(50),
 seats INTEGER,
-responsiblePerson VARCHAR(100);
+responsiblePerson VARCHAR(100)
 );
 
 CREATE TABLE feature(
