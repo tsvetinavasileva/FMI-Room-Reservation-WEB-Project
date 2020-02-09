@@ -40,12 +40,12 @@ input[type=submit]:hover {
     }
 }
 
-#features-select {
+#features {
     white-space: normal;
     overflow-y: auto;
 }
 
-#features-select option {
+#features option {
     font-family: 'FontAwesome', sans-serif;
     font-size: 16px;
 }
