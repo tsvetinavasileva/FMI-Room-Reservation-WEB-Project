@@ -3,16 +3,16 @@ const ROOT_DIR = "FMI-Room-Reservation-WEB-Project/project";
 $.ajax({
     url: "php/getBuildings.php",
     context: document.body,
-    success: function(response) {
-        var select = document.getElementById("building-select");
+    success: function (response) {
+        var buildingsSelect = document.getElementById("buildingNames");
         let buildingsNames = JSON.parse(response);
         for (let i = 0; i < buildingsNames.length; i++) {
-            select.options[select.options.length] = new Option(buildingsNames[i]);
+            buildingsSelect.options[buildingsSelect.options.length] = new Option(buildingsNames[i]);
         }
     }
 });
 
-$("#features-select").mousedown(function(e){
+$("#features").mousedown(function (e) {
     e.preventDefault();
 
     var select = this;
@@ -24,18 +24,19 @@ $("#features-select").mousedown(function(e){
     $(select).focus();
 }).mousemove(e => e.preventDefault());
 
+
 $.ajax({
     url: "php/getFeatures.php",
     context: document.body,
-    success: function(response) {
-        var select = document.getElementById("features-select");
+    success: function (response) {
+        var featuresSelect = document.getElementById("features");
         let features = JSON.parse(response);
-        select.setAttribute("size", features.length)
+        featuresSelect.setAttribute("size", features.length)
         for (let i = 0; i < features.length; i++) {
             var option = new Option();
             option.innerHTML = features[i]["iconCode"] + " " + features[i]["featureName"];
             option.setAttribute("value", features[i]["featureName"]);
-            select.options[select.options.length] = option;
+            featuresSelect.options[featuresSelect.options.length] = option;
         }
     }
 });
